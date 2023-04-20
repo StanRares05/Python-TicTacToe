@@ -155,3 +155,15 @@ while GameOn==True :
         GameOn=False
         print("Remiza")
         break
+
+main = "scoreboard.txt"
+with open(main, 'r') as file:
+    num = int(file.read())
+    num+=1
+with open(main, 'w') as file2:
+    file2.write(f'{str(num)}')
+with open(main, 'r') as file:
+    num = int(file.read())
+    print('TOTAL MECIURI=',num)
+
+    
