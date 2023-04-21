@@ -1,113 +1,158 @@
 import tkinter as tk
-global myButton
 a=0
 tabla = [[".",".","."],
          [".",".","."],
          [".",".","."]]
+
+#win status
+
+def disable():
+    myButton['state'] = 'disabled'
+    myButton2['state'] = 'disabled'
+    myButton3['state'] = 'disabled'
+    myButton4['state'] = 'disabled'
+    myButton5['state'] = 'disabled'
+    myButton6['state'] = 'disabled'
+    myButton7['state'] = 'disabled'
+    myButton8['state'] = 'disabled'
+    myButton9['state'] = 'disabled'
+
 
 def Check():
 #diagonala1
     if tabla[0][0] == "x" and tabla[1][1] == "x" and tabla[2][2] == "x":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
     if tabla[0][0] == "0" and tabla[1][1] == "0" and tabla[2][2] == "0":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
 #diagonala2
     if tabla[0][2] == "x" and tabla[1][1] == "x" and tabla[2][0] == "x":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
     if tabla[0][2] == "0" and tabla[1][1] == "0" and tabla[2][0] == "0":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
 #rand 1
     if tabla[0][0] == "x" and tabla[1][0] == "x" and tabla[2][0] == "x":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
     if tabla[0][0] == "0" and tabla[1][0] == "0" and tabla[2][0] == "0":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
 #rand 2
     if tabla[0][1] == "x" and tabla[1][1] == "x" and tabla[2][1] == "x":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
     if tabla[0][1] == "0" and tabla[1][1] == "0" and tabla[2][1] == "0":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
 #rand 3
     if tabla[0][2] == "x" and tabla[1][2] == "x" and tabla[2][2] == "x":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
     if tabla[0][2] == "0" and tabla[1][2] == "0" and tabla[2][2] == "0":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
 #coloana 1
     if tabla[0][0] == "x" and tabla[0][1] == "x" and tabla[0][2] == "x":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
     if tabla[0][0] == "0" and tabla[0][1] == "0" and tabla[0][2] == "0":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
 #coloana 2
     if tabla[1][0] == "x" and tabla[1][1] == "x" and tabla[1][2] == "x":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
     if tabla[1][0] == "0" and tabla[1][1] == "0" and tabla[1][2] == "0":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
 #coloana 3
     if tabla[2][0] == "x" and tabla[2][1] == "x" and tabla[2][2] == "x":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
     if tabla[2][0] == "0" and tabla[2][1] == "0" and tabla[2][2] == "0":
         if a%2==0:
             masterWindow.title('X a castigat')
+            disable()
         else:
             masterWindow.title('0 a castigat')
+            disable()
 
     if tabla[0][0]!="." and tabla[0][1]!="." and tabla[0][2]!="." and tabla[1][0]!="." and tabla[1][1]!="." and tabla[1][2]!="." and tabla[2][0]!="." and tabla[2][1]!="." and tabla[2][2]!=".":
         masterWindow.title("Remiza")
+
+#button functions
 
 def Delete1():
     row=0
     column=0
     global a
     if a%2==0:
-        text='X'
+        text = 'X'
         tabla[row][column] = "x"
         Check()
     else:
-        text='0'
+        text = '0'
         tabla[row][column] = "0"
         Check()
     a+=1
@@ -244,7 +289,6 @@ def Delete9():
     myButton9['state'] = 'disabled'
 
 
-
 masterWindow = tk.Tk()
 
 # window title
@@ -259,6 +303,7 @@ masterWindow.configure(bg="Black")
 
 # frame
 button_frame = tk.Frame(masterWindow)
+button_frame.config(bg='Black')
 button_frame.pack(fill=tk.BOTH, expand=True)
 
 # buttons
